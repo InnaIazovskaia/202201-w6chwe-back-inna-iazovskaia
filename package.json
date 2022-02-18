@@ -1,0 +1,27 @@
+{
+  "name": "robots-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InnaIazovskaia/202201-w6chwe-back-inna-iazovskaia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InnaIazovskaia/202201-w6chwe-back-inna-iazovskaia/issues"
+  },
+  "homepage": "https://github.com/InnaIazovskaia/202201-w6chwe-back-inna-iazovskaia#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4"
+  }
+}
