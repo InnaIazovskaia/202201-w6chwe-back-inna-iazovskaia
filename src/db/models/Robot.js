@@ -11,10 +11,14 @@ const RobotSchema = new Schema({
   },
   speed: {
     type: Number,
+    minlength: 0,
+    maxlength: 9,
     required: true,
   },
   strenght: {
     type: Number,
+    minlength: 0,
+    maxlength: 9,
     required: true,
   },
   "date of creation": {
