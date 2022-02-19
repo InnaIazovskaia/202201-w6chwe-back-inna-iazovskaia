@@ -2,6 +2,7 @@ const express = require("express");
 const debug = require("debug")("my-robots:server");
 const chalk = require("chalk");
 const morgan = require("morgan");
+const cors = require("cors");
 const { notFoundError, globalError } = require("./middlewares/errors");
 const robotsRouter = require("./routers/robotRouter");
 
@@ -21,6 +22,8 @@ const onServer = (port) =>
 
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use(cors());
 
 app.use("/robots", robotsRouter);
 
