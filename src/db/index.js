@@ -9,7 +9,7 @@ const connectDataBase = (connectingString) =>
         reject(new Error(`Database not connected: ${error.message}`));
         return;
       }
-      debug(chalk.red("Database connected"));
+      debug(chalk.yellow("Database connected"));
       resolve();
     });
   });

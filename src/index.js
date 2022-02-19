@@ -4,7 +4,7 @@ const chalk = require("chalk");
 const onServer = require("./server");
 const connectDataBase = require("./db");
 
-const port = process.env.SERVER_PORT || 4000;
+const port = process.env.PORT || 4000;
 const connectingString = process.env.DATABASE_STRING;
 
 (async () => {
