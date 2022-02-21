@@ -5,4 +5,37 @@ const getRobots = async (req, res) => {
   res.json({ robots });
 };
 
-module.exports = getRobots;
+const getRobot = async (req, res, next) => {
+  try {
+    const { idRobot } = req.params;
+    const robot = await Robot.findById(idRobot);
+    if (robot) {
+      res.json({ robot });
+    } else {
+      const error = new Error("Robot doesn’t exist");
+      error.code = 404;
+      next(error);
+    }
+  } catch (error) {
+    error.code = 400;
+    next(error);
+  }
+};
+
+const createRobot = async (req, res, next) => {
+  if (!req.body.robot) {
+    const error = new Error("The body doesn't have 'robot'");
+    error.code = 400;
+    next(error);
+  } else {
+    try {
+      const createdRobot = await Robot.create(req.body.robot);
+      res.status(201).json(createdRobot);
+    } catch (error) {
+      error.code = 400;
+      next(error);
+    }
+  }
+};
+
+module.exports = { getRobots, getRobot, createRobot };

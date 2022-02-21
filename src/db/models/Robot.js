@@ -21,8 +21,8 @@ const RobotSchema = new Schema({
     maxlength: 9,
     required: true,
   },
-  "date of creation": {
-    type: Date,
+  date_of_creation: {
+    type: String,
     required: true,
   },
 });
