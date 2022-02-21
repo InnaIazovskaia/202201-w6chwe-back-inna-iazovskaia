@@ -38,4 +38,24 @@ const createRobot = async (req, res, next) => {
   }
 };
 
-module.exports = { getRobots, getRobot, createRobot };
+const updateRobot = async (req, res, next) => {
+  try {
+    const robotToUpdate = req.body;
+    const { id } = robotToUpdate;
+    const updatedRobot = await Robot.findByIdAndUpdate(id, robotToUpdate, {
+      new: true,
+    });
+    if (updatedRobot) {
+      res.json({ updatedRobot });
+    } else {
+      const error = new Error("Robot doesn’t exist");
+      error.code = 404;
+      next(error);
+    }
+  } catch (error) {
+    error.code = 400;
+    next(error);
+  }
+};
+
+module.exports = { getRobots, getRobot, createRobot, updateRobot };
